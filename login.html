@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión — PEJE TICKETS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="login-screen">
+    <div class="login-card">
+      <div class="brand">
+        <img class="brand-logo" src="Logo peje tickets.png" alt="Logo PEJE TICKETS" />
+      </div>
+      <p class="subtitle">Accede para explorar y comprar boletos de eventos disponibles.</p>
+      <form id="loginForm" class="login-form" novalidate>
+        <p id="loginError" class="form-error hidden" role="alert"></p>
+        <div class="field">
+          <label for="email">Correo</label>
+          <input id="email" name="email" type="text" inputmode="email" autocomplete="username" placeholder="admin@pejetickets.com" aria-describedby="loginError" />
+        </div>
+        <div class="field">
+          <label for="password">Contraseña</label>
+          <div class="password-wrapper" style="position: relative; display: flex; align-items: center;">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="********" aria-describedby="loginError" style="width: 100%; padding-right: 40px;" />
+            <button type="button" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #666; padding: 5px; display: flex; align-items: center; justify-content: center; z-index: 10;">
+              <i class="fa-solid fa-eye" id="eyeIcon"></i>
+            </button>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</button>
+      </form>
+      <p class="helper">
+        <a href="registro.html" style="color: inherit; text-decoration: underline;">¿No tienes cuenta? Regístrate aquí</a>
+      </p>
+      <p class="helper">Usa tu cuenta de cliente para comprar boletos en línea.</p>
+    </div>
+  </section>
+    
+  <script src="env.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

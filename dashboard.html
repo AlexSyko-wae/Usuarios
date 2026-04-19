@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEJE TICKETS — Portal de Clientes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8gY7pM8R9i3f7kRXKuX3sX5Yucs5cjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <div id="sidebarBackdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <main id="app" class="app">
+    <aside id="sidebar" class="sidebar" aria-label="Menú lateral">
+      <div class="brand">
+        <button type="button" id="btnBrandHome" class="brand-link" aria-label="Ir a inicio">
+          <img class="brand-logo" src="Logo peje tickets.png" alt="Logo PEJE TICKETS" />
+          <span class="brand-name">Peje Tickets</span>
+        </button>
+      </div>
+      <nav class="menu" id="menu" aria-label="Navegación principal"></nav>
+    </aside>
+    <section class="app-main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="mobileToggle" type="button" class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div id="viewTitle" class="title">Dashboard</div>
+        </div>
+        <div class="topbar-right">
+          <div class="user-block">
+            <div class="user-avatar" id="userAvatar">
+              <img src="" alt="Foto de perfil" />
+            </div>
+            <div class="user-meta">
+              <span class="user-name" id="userDisplayName"><i class="fa-solid fa-user"></i> —</span>
+              <span class="user-email" id="userEmail"></span>
+            </div>
+            <span class="user-role-pill" id="userRolePill">—</span>
+          </div>
+          <button type="button" id="btnLogout" class="btn btn-logout" title="Cerrar sesión">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Cerrar sesión</span>
+          </button>
+        </div>
+      </header>
+      <div class="content" id="content"></div>
+      <div id="eventModalBackdrop" class="modal-backdrop hidden" aria-hidden="true"></div>
+      <div id="eventDetailModal" class="modal hidden" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <script src="env.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
